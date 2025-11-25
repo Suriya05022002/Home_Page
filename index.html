@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gowthamraj Networks - Transform Your Tech Career</title>
+    <meta name="description" content="Join 1,000+ students who transformed their careers with industry-ready tech skills. Master job-relevant tech in just 40 hours per course.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" > -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="enhanced-animations.css">
+</head>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: linear-gradient(135deg,#6366f1 0%,#4f46e5 100%);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .video-section {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            margin: 2rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-subtitle1 {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .video-card h3 {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .video-card:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .video-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Single video layout option */
+        .single-video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .single-video-container .video-wrapper {
+            margin: 2rem 0;
+        }
+
+        /* Image Carousel Styles */
+        .gallery-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .image-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 500%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .carousel-slide {
+            position: relative;
+            width: 20%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 40px 30px 30px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-slide.active .slide-overlay {
+            transform: translateY(0);
+        }
+
+        .slide-overlay h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .slide-overlay p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1e293b;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            pointer-events: all;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-btn:hover {
+            background: white;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .carousel-indicator:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .carousel-container {
+                height: 300px;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .slide-overlay {
+                padding: 20px 20px 20px;
+            }
+
+            .slide-overlay h3 {
+                font-size: 1.2rem;
+            }
+
+            .slide-overlay p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-carousel {
+                margin: 0 20px;
+                border-radius: 15px;
+            }
+
+            .carousel-container {
+                height: 250px;
+            }
+
+            .carousel-controls {
+                padding: 0 10px;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .section-title1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .video-card {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle1{
+                font-size: 1rem;
+            }
+        }
+        
+    </style>
+<body>
+   
+  <!-- Simplified loading screen without any text or branding  -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+     
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <!-- <div class="brand-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div> -->
+                <span class="brand-text">Gowthamraj Networks</span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#courses" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">Success Stories</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-primary nav-cta" onclick="openModal('enrollModal')">
+                        <i class="fas fa-rocket"></i>
+                        Enroll Now
+                    </button>
+                </li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-particles"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-fire"></i>
+                        <span>Transform Your Career in 40 Hours</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Your Degree Won't Get You a Job—
+                        <span class="gradient-text">Our Training Will</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Join 1,000+ students who transformed their careers with industry-ready tech skills. 
+                        Master job-relevant tech in just 40 hours per course — without wasting years in college.
+                    </p>
+                    
+                   <div class="hero-buttons"> 
+                       <button class="btn btn-primary btn-large" onclick="scrollToSection('courses')">
+                            <i class="fas fa-play"></i>
+                            Start Learning Now
+                        </button>
+                        <button class="btn btn-secondary btn-large" onclick="scrollToSection('testimonials')">
+                            <i class="fas fa-star"></i>
+                            Success Stories
+                        </button> 
+                         
+                        <!-- <div class="progress-section fade-in"> -->
+            <!-- <div class="progress-item">
+                <div class="progress-label">
+                    <span>Technical Articles and Courses</span>
+                    <span class="progress-percentage">96%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill technical" data-width="96"></div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Programming Languages</span>
+                    <span class="progress-percentage">98%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill programming" data-width="98"></div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Interview Preparation</span>
+                    <span class="progress-percentage">98%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill interview" data-width="98"></div>
+                </div>
+            </div> -->
+        <!-- </div> -->
+  
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <img src="Courseposterphoto.webp" alt="Course Preview" class="hero-image">
+                        <div class="hero-image-overlay"></div>
+                    </div>
+                </div>
+        </div>
+         </section>
+        
+    <!-- Breaking News -->
+
+    <section class="problem-section" id="problem">
+        <div class="container2">
+      <div class="ticker">
+        <div class="title"><h5>Breaking News</h5></div>
+        <div class="news">
+          <marquee>
+            <p>
+                "Quarterly earnings report released today.",
+                "New product launch scheduled for next month.",
+                "CEO announces new strategic initiatives.",
+                "Company awarded Best Workplace 2024.",
+                "Upcoming company-wide meeting next Friday."
+          </p>
+          </marquee>
+        </div>
+      </div>
+    </div>
+
+    <section class="hero">
+    <div class="hero-left">
+        <h1>
+            <span class="red">The Best Learning  </span> <br>
+           At The Affordable <br>
+            Cost.
+        </h1>
+
+        <div class="points">
+            <p>Quality Education For Everyone At the World’s Lowest Price</p>
+            <p>Anyone Can Afford Our Courses</p>
+            <p>Our mission is to make technical education accessible to all by providing 
+               quality educational resources created by our CEO Gowtham Raj Sir’s core team offering
+               coaching and guidance to learners.</p>
+            <p>Pay One-time Subscription / Learning Fees and Access Unlimited Resources 
+               in our platform lifetime</p>
+            <p>Lot of Complimentary Benefits To Our Subscribed Learners in addition to articles and courses</p>
+        </div>
+
+    <a href ="https://gowthamrajnetwork.com/enroll/plans/premium/" ><button class="btn1">Enroll Now / Subscribe</button></a> 
+    </div>
+
+    <div class="hero-right">
+        <img src="images/ceowaves1.webp" alt="Learning Image">
+    </div>
+</section>
+<!--     
+<section class="hero-section">
+        <div class="hero-content">
+            <h1>
+                The Best <br>
+                <span class="highlight-red">Learning</span> At <br>
+                The <span class="highlight-red">Affordable</span> <br>
+                Cost.
+            </h1>
+            <p class="subtitle">Quality Education for Everyone at the World's Lowest Price</p>
+            <p class="small-text">Anyone Can Afford Our Courses.</p>
+            <p class="mission-text">
+                Our mission is to make technical education accessible to all by providing quality educational resources created by our CEO GOWTHAMRAJ like's core team offering coaching and guidance to learners.
+            </p>
+            <p class="small-text">Pay One-time Subscription/Learning fees and access **Unlimited Resources** in our platform Lifetime</p>
+            <p class="small-text">Lot of Complimentary benefits to Our Subscribed Learners in addition to articles and courses</p>
+
+            <button class="enroll-btn">Enroll Now / Subscribe</button>
+        </div>
+        <div class="hero-image-container">
+            <div class="image-placeholder">
+                <p>Image Placeholder: Anna University Lecture</p>
+            </div>
+        </div>
+    </section> -->
+    
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Harsh Reality</h2>
+                <p class="section-subtitle">
+                    Traditional degrees are expensive, outdated, and don't guarantee jobs. 
+                    Most students graduate with debt and zero practical skills.
+                </p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="problem-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>College Didn't Prepare You?</h3>
+                    <p>Feel like your expensive degree didn't teach you real-world skills that employers actually need?</p>
+                </div>
+                
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="problem-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Spent Lakhs, Still Stuck?</h3>
+                    <p>Invested heavily in education but still struggling to land that dream tech job?</p>
+                </div>
+                
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="problem-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Online Courses Failed?</h3>
+                    <p>Tried multiple online platforms but still can't crack technical interviews?</p>
+                </div>
+            </div>
+            
+            <div class="solution-cta" data-aos="fade-up" data-aos-delay="400">
+                <h3>You're Not Alone. But There's a Better Way.</h3>
+                <div class="cta-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+<!-- learners working company -->
+<div class="container1">
+  <h2 class="section-title">Our Learners work at</h2>
+  <section class="customer-logos slider">
+    <div class="slide"><img src="images/f5.png" alt="F5 company logo"></div>
+      <div class="slide"><img src="images/kone.png" alt="KONE company logo"></div>
+       <div class="slide"><img src="images/qualcomm.png" alt="Qualcomm logo"></div>
+       <div class="slide"><img src="images/WellsFargo.png" alt="Wells Fargo logo"></div>
+       <div class="slide"><img src="images/walmart.png" alt="Walmart logo"></div>
+       <div class="slide"><img src="images/Citibank.png" alt="Citibank logo"></div>
+        <div class="slide"><img src="images/boa.png" alt="Bank of America logo"></div>
+  </section>
+</div>
+
+
+
+<!--learners count-->
+    <section class="subscribed-learners">
+        <h2>Our Subscribed Learners Count</h2>
+        <div class="stats-container">
+            <div class="stat-box">
+                <h3 data-target="3000">0</h3>
+                <p><strong>Learners</strong></p>
+            </div>
+            <div class="stat-box">
+                <h3 data-target="20">0</h3>
+                <p><strong>Mentors</strong></p>
+            </div>
+            <div class="stat-box">
+                <h3 data-target="5000">0</h3>
+                <p><strong>Lines Of Code Submission</strong></p>
+            </div>
+            <div class="stat-box">
+                <h3 data-target="1673">0</h3>
+                <p><strong>Videos</strong></p>
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-box">
+                <div class="progress-circle" data-progress="98">0%</div>
+                <p><strong>of Learners complete their courses within 3 months</strong></p>
+            </div>
+            <div class="progress-box">
+                <div class="progress-circle" data-progress="98">0%</div>
+                <p><strong>of Learners could recollect the concepts faster</strong></p>
+            </div>
+            <div class="progress-box">
+                <div class="progress-circle" data-progress="99">0%</div>
+                <p><strong>of Learners have better understanding over complex topics</strong></p>
+            </div>
+        </div>
+    </section>
+    
+
+     <!-- Video Section with Grid Layout -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title1">Course Preview Videos</h2>
+                <p class="section-subtitle1">
+                    Get a glimpse of our comprehensive training programs and see how we transform careers through practical, hands-on learning.
+                </p>
+            </div>
+            
+            <div class="videos-grid">
+                <div class="video-card">
+                    <h3>Course Introduction</h3>
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="home.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <!-- <p class="video-description">
+                        Discover how our industry-focused approach helps students land high-paying tech jobs in just 40 hours of training.
+                    </p> -->
+                </div>
+                
+                <div class="video-card">
+                    <h3>Student Success Stories</h3>
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="home.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <!-- <p class="video-description">
+                        Hear directly from our graduates who transformed their careers and landed jobs at top companies like Zoho, Dell, and TCS.
+                    </p> -->
+                </div>
+                
+                <div class="video-card">
+                    <h3>Teaching Methodology</h3>
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="home.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <!-- <p class="video-description">
+                        Experience our unique practical approach that focuses on real-world skills employers actually need.
+                    </p> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Gallery</h2>
+                <p class="section-subtitle">
+                    Explore our learning environment and student achievements
+                </p>
+            </div>
+            
+            <div class="image-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide active">
+                            <img src="course-1.jpg" alt="Computer Lab" />
+                            <div class="slide-overlay">
+                                <h3>State-of-the-Art Computer Lab</h3>
+                                <p>Modern facilities for hands-on learning</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="course-1.jpg" alt="Students Coding" />
+                            <div class="slide-overlay">
+                                <h3>Collaborative Learning</h3>
+                                <p>Students working together on real projects</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="course-1.jpg" alt="Graduation" />
+                            <div class="slide-overlay">
+                                <h3>Success Stories</h3>
+                                <p>Celebrating our graduates' achievements</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="course-1.jpg" alt="Cloud Training" />
+                            <div class="slide-overlay">
+                                <h3>Expert Instructors</h3>
+                                <p>Learn from industry professionals</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="course-1.jpg" alt="Workplace" />
+                            <div class="slide-overlay">
+                                <h3>Industry Connections</h3>
+                                <p>Direct pathways to top companies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" id="prevCarouselBtn" onclick="moveCarousel(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" id="nextCarouselBtn" onclick="moveCarousel(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <div class="carousel-indicator active" onclick="goToCarouselSlide(0)"></div>
+                    <div class="carousel-indicator" onclick="goToCarouselSlide(1)"></div>
+                    <div class="carousel-indicator" onclick="goToCarouselSlide(2)"></div>
+                    <div class="carousel-indicator" onclick="goToCarouselSlide(3)"></div>
+                    <div class="carousel-indicator" onclick="goToCarouselSlide(4)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <div class="section-header">
+                        <h2 class="section-title">We Bridge the Gap Between Education and Employment</h2>
+                        <p class="section-subtitle">
+                            We are not a typical coaching center. We are a placement-focused tech training institute 
+                            built by engineers, for engineers. Our founder, Gowthamraj Sir, left his high-paying job at F5 Networks to solve one problem:
+                        </p>
+                        <div class="problem-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Why are thousands of talented students jobless even after spending lakhs on engineering degrees?"</p>
+                        </div>
+                        <p class="mission-statement">
+                            <strong>We teach what actually gets you hired. Nothing else.</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>100% Job-Focused Training</h4>
+                                <p>Every lesson is designed to get you hired, not just educated. We focus on practical skills that employers actually need.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Fast-Track Learning</h4>
+                                <p>Master industry-relevant skills in 30-40 hours, not 4 years. Efficient, focused, and results-driven approach.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>End-to-End Placement Support</h4>
+                                <p>From resume building to interview preparation, we guide you through every step to your dream job.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Built by Engineers, for Engineers</h4>
+                                <p>Real industry experience translated into practical learning that bridges the gap between theory and practice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="founder-card">
+                        <div class="founder-image">
+                            <div class="founder-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <div class="founder-info">
+                            <h3>Gowthamraj Sir</h3>
+                            <p class="founder-title">F5 Networks Engineer</p>
+                            <div class="founder-story">
+                                <h4>From Anna University to F5 Networks — And Back to You</h4>
+                                <p>Gowthamraj Sir was once a student just like you. Confused. Overwhelmed. Struggling with an outdated syllabus. After landing a dream job at F5 Networks, he realized most graduates lack the real-world skills needed for success.</p>
+                                <p class="founder-mission">So our Gowthamraj Sir started this wonderful venture for the welfare of the society. He came back to Coimbatore to create a new kind of education platform—Gowthamraj Networks. A place where learning is practical, fast, affordable, and focused 100% on career outcomes.</p>
+                            </div>
+                            <div class="founder-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"If you can learn one day before the exam, you can learn skills in 40 hours too. If only it's taught the right way."</p>
+                            </div>
+                            <div class="founder-journey">
+                                <div class="journey-item">
+                                    <div class="journey-icon">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div class="journey-content">
+                                        <h5>Anna University Graduate</h5>
+                                        <p>Started like every other confused engineering student</p>
+                                    </div>
+                                </div>
+                                <div class="journey-item">
+                                    <div class="journey-icon">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div class="journey-content">
+                                        <h5>F5 Networks Engineer</h5>
+                                        <p>Landed dream job through practical skills, not just theory</p>
+                                    </div>
+                                </div>
+                                <div class="journey-item">
+                                    <div class="journey-icon">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <div class="journey-content">
+                                        <h5>Social Mission</h5>
+                                        <p>Returned to help students bridge the education-employment gap</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Shortcut to a High-Paying Tech Job</h2>
+                <p class="section-subtitle">
+                    15+ industry-ready courses designed to get you hired, not just certified.
+                </p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="course-badge">Most Popular</div>
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Python Development</h3>
+                        <p>From basics to advanced Python programming with Django, Flask, and data science libraries.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 42 hours</span>
+                            <span><i class="fas fa-project-diagram"></i> 8 projects</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>AI & Machine Learning</h3>
+                        <p>Master AI algorithms, ML models, and deep learning with hands-on projects.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 40 hours</span>
+                            <span><i class="fas fa-project-diagram"></i> 6 projects</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Cloud Computing</h3>
+                        <p>AWS, Azure, Google Cloud - Learn cloud architecture and deployment strategies.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 35 hours</span>
+                            <span><i class="fas fa-project-diagram"></i> 5 projects</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>DevOps Engineering</h3>
+                        <p>CI/CD, Docker, Kubernetes, Jenkins - Complete DevOps pipeline mastery.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 38 hours</span>
+                            <span><i class="fas fa-project-diagram"></i> 7 projects</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Cybersecurity</h3>
+                        <p>Ethical hacking, penetration testing, and advanced security protocols.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 36 hours</span>
+                            <span><i class="fas fa-project-diagram"></i> 4 projects</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>10+ More Courses</h3>
+                        <p>Full Stack, Data Science, Networking, Mobile Development, and more!</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-infinity"></i> Lifetime</span>
+                            <span><i class="fas fa-sync-alt"></i> Updates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="courses-features" data-aos="fade-up" data-aos-delay="700">
+                <h3>What You Get with Your One-Time Subscription (₹999)</h3>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <i class="fas fa-infinity"></i>
+                        <h4>Lifetime Access</h4>
+                        <p>Learn all 15+ courses with a single fee</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-language"></i>
+                        <h4>Tamil & English</h4>
+                        <p>Native-language support for better clarity</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h4>Learn & Earn</h4>
+                        <p>Client projects & freelance training included</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-users"></i>
+                        <h4>Community Support</h4>
+                        <p>WhatsApp groups & live doubt clearing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Real Students. Real Success Stories.</h2>
+                <p class="section-subtitle">
+                    Our students landed jobs at companies like Zoho, Dell, Citicorp, and Fidelity Investments
+                </p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&crop=face" alt="Priya Sharma">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Priya Sharma</h4>
+                                <p class="company">Software Engineer at Zoho</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"Gowthamraj Networks completely changed my life. I was struggling after engineering. The practical approach helped me land at Zoho in just 3 months!"</p>
+                        </div>
+                        <div class="testimonial-footer">
+                            <span class="package">₹6.5 LPA</span>
+                            <span class="course">Python Development</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Rajesh Kumar">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Rajesh Kumar</h4>
+                                <p class="company">DevOps Engineer at Dell</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"The DevOps course was exactly what I needed. Gowthamraj Sir's teaching method is unique - practical skills that companies need. Best investment ever!"</p>
+                        </div>
+                        <div class="testimonial-footer">
+                            <span class="package">₹8.2 LPA</span>
+                            <span class="course">DevOps & Cloud</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="Anitha Ravi">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Anitha Ravi</h4>
+                                <p class="company">Cloud Engineer at Fidelity</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"From ₹15,000 to ₹45,000 in just 6 months! The cloud computing course opened doors I never thought possible. Amazing support!"</p>
+                        </div>
+                        <div class="testimonial-footer">
+                            <span class="package">₹5.4 LPA</span>
+                            <span class="course">Cloud Computing</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Karthik Menon">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Karthik Menon</h4>
+                                <p class="company">AI Engineer at TCS</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"The AI & Machine Learning course gave me the confidence to switch careers. Now I'm working on cutting-edge AI projects at TCS!"</p>
+                        </div>
+                        <div class="testimonial-footer">
+                            <span class="package">₹7.8 LPA</span>
+                            <span class="course">AI & ML</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&crop=face" alt="Sneha Patel">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Sneha Patel</h4>
+                                <p class="company">Security Analyst at Infosys</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"The cybersecurity course was comprehensive and practical. I went from zero knowledge to landing a security role at Infosys. Incredible journey!"</p>
+                        </div>
+                        <div class="testimonial-footer">
+                            <span class="package">₹6.8 LPA</span>
+                            <span class="course">Cybersecurity</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=80&h=80&fit=crop&crop=face" alt="Arjun Singh">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Arjun Singh</h4>
+                                <p class="company">Full Stack Developer at Wipro</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"From a non-tech background to full stack developer in 4 months. The structured curriculum and hands-on projects made all the difference!"</p>
+                        </div>
+                        <div class="testimonial-footer">
+                            <span class="package">₹5.2 LPA</span>
+                            <span class="course">Full Stack</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" id="prevBtn" onclick="moveTestimonial(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonial-btn next" id="nextBtn" onclick="moveTestimonial(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="testimonial-indicators" id="indicators">
+                    <div class="indicator active" onclick="goToSlide(0)"></div>
+                    <div class="indicator" onclick="goToSlide(1)"></div>
+                    <div class="indicator" onclick="goToSlide(2)"></div>
+                    <div class="indicator" onclick="goToSlide(3)"></div>
+                    <div class="indicator" onclick="goToSlide(4)"></div>
+                    <div class="indicator" onclick="goToSlide(5)"></div>
+                </div>
+            </div>
+
+            <div class="testimonials-footer" data-aos="fade-up">
+                <p class="testimonials-description">
+                    Thousands of students have transformed their careers with hands-on training at Gowthamraj Networks. 
+                    Our job-focused courses have helped them land jobs at top tech companies, earn six-figure salaries, 
+                    and gain the skills they need to succeed in the real world.
+                </p>
+                <p class="testimonials-cta">
+                    Don't just take our word for it – hear from those who've walked the path and found success.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>This Offer Won't Stay ₹999 Forever</h2>
+                <p>We're doing this as a mission—to reach 10,000+ students this year. But as demand rises, we plan to revise our pricing very soon.</p>
+                
+                <div class="cta-timer" id="ctaTimer">
+                    <div class="timer-text">Limited Time Offer Ends In:</div>
+                    <div class="timer-display">
+                        <div class="timer-unit">
+                            <span id="hours">23</span>
+                            <label>Hours</label>
+                        </div>
+                        <div class="timer-unit">
+                            <span id="minutes">59</span>
+                            <label>Minutes</label>
+                        </div>
+                        <div class="timer-unit">
+                            <span id="seconds">45</span>
+                            <label>Seconds</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fas fa-infinity"></i>
+                        <span>Lifetime access to all courses</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>All future updates included</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-ban"></i>
+                        <span>No monthly/annual subscription</span>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-large pulse" onclick="openModal('enrollModal')">
+                        <i class="fas fa-rocket"></i>
+                        Enroll Now - ₹999
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="scrollToSection('courses')">
+                        <i class="fas fa-list"></i>
+                        Explore Full Curriculum
+                    </button>
+                </div>
+
+                <div class="cta-community">
+                    <h3>You're Not Learning Alone</h3>
+                    <p>Join a growing community of students, mentors, and industry experts.</p>
+                    <div class="community-features">
+                        <div class="community-feature">
+                            <i class="fas fa-video"></i>
+                            <span>Live Zoom Support Sessions</span>
+                        </div>
+                        <div class="community-feature">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp Doubt Clearing Groups</span>
+                        </div>
+                        <div class="community-feature">
+                            <i class="fas fa-users"></i>
+                            <span>Peer-to-peer discussion</span>
+                        </div>
+                        <div class="community-feature">
+                            <i class="fas fa-bell"></i>
+                            <span>Job alert updates for active learners</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions? We're here to help you start your tech journey.</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>info@gowthamrajnetworks.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Whatsapp</h4>
+                                <p>+91 6385854811</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Coimbatore, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="brand-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span class="brand-text">Gowthamraj Networks</span>
+                    </div>
+                    <p>Bridging the gap between education and employment through practical, job-ready tech training.</p>    
+                    <p>Your Skills = Your Future. Start Building Both Today.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/gowthamrajnetwork" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/gowthamraj_network/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/gowthamrajnetwork/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@GOWTHAMRAJNETWORK" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#testimonials">Success Stories</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Popular Courses</h4>
+                    <ul>
+                        <li><a href="#">Python Development</a></li>
+                        <li><a href="#">AI & Machine Learning</a></li>
+                        <li><a href="#">Cloud Computing</a></li>
+                        <li><a href="#">DevOps Engineering</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gowthamraj Networks. All rights reserved.</p>
+                <p class="footer-tagline"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enrollment Modal -->
+    <div class="modal" id="enrollModal">
+        <div class="modal-overlay" onclick="closeModal('enrollModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Start Your Tech Journey</h3>
+                <button class="modal-close" onclick="closeModal('enrollModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="enrollment-form">
+                    <form id="enrollForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="firstName" name="firstName" required>
+                                <label for="firstName">First Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="lastName" name="lastName" required>
+                                <label for="lastName">Last Name</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="enrollEmail" name="email" required>
+                            <label for="enrollEmail">Email Address</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="enrollPhone" name="phone" required>
+                            <label for="enrollPhone">Phone Number</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="course" name="course" required>
+                                <option value="">Select Primary Interest</option>
+                                <option value="python">Python Development</option>
+                                <option value="ai-ml">AI & Machine Learning</option>
+                                <option value="cloud">Cloud Computing</option>
+                                <option value="devops">DevOps Engineering</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="all">All Courses</option>
+                            </select>
+                            <label for="course">Course Interest</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-credit-card"></i>
+                            Proceed to Payment - ₹999
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="enhanced-interactions.js"></script>
+</body>
+</html>
